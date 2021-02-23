@@ -1,0 +1,21 @@
+  <div class="container">
+  <% if @task.completed === false %>
+  <%= simple_form_for(@task) do |f| %>
+  <%= f.input :title %>
+  <%= f.input :details %>
+  <%= f.input :completed %>
+  <%= f.submit %>
+  <% end %>
+  </p>
+  <% else %>
+  <p>
+  <%= simple_form_for(@task) do |f| %>
+  <%= f.input :title %>
+  <%= f.input :details %>
+  <%= f.input :completed %>
+  <%= f.submit %>
+  <% end %>
+  <p><%= link_to "Back to list", tasks_path(@task) %></p>
+  <% end %>
+  </div>
+
